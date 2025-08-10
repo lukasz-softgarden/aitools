@@ -2,7 +2,7 @@
 
 ## Global Chat Modes
 
-Stored in: `~/Library/Application Support/Code/User/prompts` 
+Stored in: `~/Library/Application\ Support/Code/User/prompts/` 
 
 ## Repo Chat Modes
 
