@@ -1,6 +1,5 @@
 ---
 description: Generate an implementation plan for new features or refactoring existing code.
-tools: ['changes', 'codebase', 'editFiles', 'fetch', 'findTestFiles', 'githubRepo', 'search', 'searchResults', 'usages']
 model: Claude Sonnet 4
 ---
 # Planning mode instructions

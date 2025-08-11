@@ -1,7 +1,6 @@
 ---
 mode: agent
 description: "PR description generator. Summarizes branch diff and derives JIRA key for a concise PR body."
-tools: ['codebase', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'terminalSelection', 'terminalLastCommand', 'openSimpleBrowser', 'fetch', 'findTestFiles', 'searchResults', 'githubRepo', 'extensions', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks']
 ---
 
 You output a terse Markdown PR description for the current branch vs the base branch.

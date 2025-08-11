@@ -1,6 +1,5 @@
 ---
 description: Implement Java features according to provided implementation plan or description.
-tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 'problems', 'runCommands', 'runNotebooks', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'vscodeAPI']
 model: Claude Sonnet 4
 ---
 # Java Implementation Mode Instructions
