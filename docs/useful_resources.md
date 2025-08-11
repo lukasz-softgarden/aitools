@@ -30,3 +30,7 @@
 - [Anthropic's Prompt Engineering Interactive Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
 - [Cline - good repository to see how AI plugins are built](https://github.com/cline/cline)
 - [Leaked system prompts](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
+
+## OpenAI - developer tools
+- [Playground](https://platform.openai.com)
+- [Tokenizer](https://platform.openai.com/tokenizer)
