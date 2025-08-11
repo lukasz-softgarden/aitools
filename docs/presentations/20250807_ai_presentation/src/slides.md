@@ -133,7 +133,7 @@ layout: center
 
 ---
 
-## Bonus — this presentation is in 90% created by AI
+## Bonus — This presentation was 90% created by AI
 
 1. Created `llms_basics.md` draft with an initial list of topics.
 2. Asked GPT-5 to review, explain the topics, and suggest additional topics where helpful.
