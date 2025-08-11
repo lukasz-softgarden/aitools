@@ -136,11 +136,11 @@ layout: center
 ## Bonus — This presentation was 90% created by AI
 
 1. Created `llms_basics.md` draft with an initial list of topics.
-2. Asked GPT-5 to review, explain the topics, and suggest additional topics where helpful.
+2. Asked GPT-5 to review and explain the topics, and suggest additional ones where helpful.
 3. Generated the slide visuals from the finalized `llms_basics.md` using ChatGPT’s agentic image workflow ([conversation](https://chatgpt.com/share/6895fcec-7ee0-800e-a0dc-7452902a4d02)).
-4. Did research in Perplexity to choose the tool to create a presentation from Markdown file => [sli.dev](https://sli.dev/)
-5. Asked GPT-5 to create a presenation (pasted link to [sli.dev](https://sli.dev/) docs)
-6. Asked GPT-5 to introduce minor edits to the slides.
+4. Conducted research in Perplexity to choose the tool for creating a presentation from a Markdown file => [sli.dev](https://sli.dev/)
+5. Asked GPT-5 to create a presentation (pasted link to [sli.dev](https://sli.dev/) docs).
+6. Asked GPT-5 to make minor edits to the slides.
 
 ---
 layout: center
