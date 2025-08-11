@@ -45,6 +45,23 @@ Models are trained up to a specific date and don’t “know” events after tha
 
 ---
 layout: image-right
+image: /img/2_knowledge_cutoff.png
+---
+
+## Knowledge Cutoff
+
+If you ask GPT-5 who is current President of the USA, it will answer "Joe Biden".
+
+| Model Name | Knowledge Cutoff Date |
+|------------|-----------------------|
+| GPT-5      | October 01, 2024      |
+| GPT-4      | September 01, 2021    |
+| GPT-3.5    | September 01, 2021    |
+
+Source: https://www.allmo.ai/articles/list-of-large-language-model-cut-off-dates
+
+---
+layout: image-right
 image: /img/3_context_window.png
 ---
 
@@ -116,7 +133,7 @@ layout: center
 
 ---
 
-## Bonus — how this presentation was made?
+## Bonus — this presentation is in 90% created by AI
 
 1. Created `llms_basics.md` draft with an initial list of topics.
 2. Asked GPT-5 to review, explain the topics, and suggest additional topics where helpful.

@@ -15,9 +15,9 @@ Models are trained up to a specific date and don’t “know” events after tha
 
 | Model Name | Knowledge Cutoff Date |
 |------------|-----------------------|
-| GPT-5      | Sept 30, 2024         |
-| GPT-4      | April 2023            |
-| GPT-3.5    | January 2022          |
+| GPT-5      | October 01, 2024      |
+| GPT-4      | September 01, 2021    |
+| GPT-3.5    | JSeptember 01, 2021   |
 
 - General example: “Who won the 2024 Olympics?” may be unknown or wrong without fresh context.
 - Developer example: Asking about the latest React/Java/Python API introduced after the cutoff.
