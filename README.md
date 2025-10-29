@@ -1,5 +1,7 @@
 ## AI Tools
 
+Presentation recording: [AI trip&tricks-20250811_130119-Meeting Recording.mp4](https://softgarden-my.sharepoint.com/:v:/r/personal/krzysztof_piotrowski_softgarden_de/Documents/AI/AI%20trip%26tricks-20250811_130119-Meeting%20Recording.mp4?csf=1&web=1&e=RTu13C&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
 A small collection of AI-related materials and utilities:
 
 - Presentations (Slidev) about LLM fundamentals
