@@ -237,7 +237,7 @@ Spec-Driven Development <strong>flips the script</strong> on traditional softwar
 
 ---
 
-## Understanding the Context Window
+## Understanding the Context
 
 <div class="grid grid-cols-[60%_40%] gap-4 mt-4">
   <div class="flex flex-col items-center">
@@ -260,7 +260,7 @@ Spec-Driven Development <strong>flips the script</strong> on traditional softwar
 
 ---
 
-## Understanding the Context Window
+## Understanding the Context
 
 <div class="slide-content">
 <div class="content">

@@ -95,11 +95,11 @@ Spec-Driven Development flips the script on traditional software development. Fo
 
 src: [Advanced Context Engineering for Agents](https://www.youtube.com/watch?v=IS_y40zY-hc)
 
-### Slide 6. Title: "Understanding the Context Window"
+### Slide 6. Title: "Understanding the Context"
 
 [Context visualisation](sources/context_visualisation.png)
 
-### Slide 7. Title: "Understanding the Context Window"
+### Slide 7. Title: "Understanding the Context"
 
 [Intentional compaction](sources/intentional_compaction.png)
 
