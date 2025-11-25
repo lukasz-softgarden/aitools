@@ -22,6 +22,7 @@ This is list of resources my presentation was referring to:
 - [How Long Contexts Fail](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html)
 - [Copilot coding agent now supports AGENTS.md custom instructions](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions/)
 - [GitHub Copilot - custom instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions)
+- [Introducing advanced tool use on the Claude Developer Platform](https://www.anthropic.com/engineering/advanced-tool-use)
 
 ## Slides
 
@@ -34,34 +35,34 @@ Special blocks:
 
 <infographic>Thematic graphic</infographic>
 <bottom_right>
-    Date: 28/11/2025
+    Date: 12/12/2025
     Author: Łukasz Wojtaszek
 </bottom_right>
 
 ### Slide 2. Title: "From the previous presentation"
 
-<left>
-LLMs are stateless (pure functions) - Each query is independent. The context from previous interactions must be explicitly provided each time.
-Context Window - There is a limit to the amount of text (tokens) that the model can process in a single query.
-</left>
+**LLM Basics**
 
-<right>
+<grid_4_cols>
+LLMs are stateless - Each query is independent. The context from previous interactions must be explicitly provided each time.
 Knowledge Cutoff - The models do not know events or data that appeared after the date of completion of their training.
+Context Window - There is a limit to the amount of text (tokens) that the model can process in a single query.
 Hallucinations - Models can generate false, but credible-sounding information, e.g., by inventing non-existent API functions.
-</right>
+</grid_4_cols>
 
-### Slide 3. Title: "From the previous presentation"
+**Coding with AI Workflow**
 
 <infographic>
-Requirements -> jira-task.md -> Research & Plan -> plan.md -> Implementation -> Generated code -> Review & fixes -> Pull request
+Requirements (jira-task.md) -> Plan (plan.md) -> Implementation (code) -> Review (review.md) -> Apply (code) -> PR
 </infographic>
 
-### Slide 4. Title: "AI tools evolution"
+### Slide 3. Title: "AI tools evolution"
 
 <left>
 **What's changed?**
 - Popularization of CLI agents: Claude Code, Cursor CLI, OpenAI Codex, Gemini CLI, Copilot CLI, Droid, OpenCode, etc.
 - AGENTS.md standard was introduced by OpenAI (.github/copilot-instructions.md -> AGENTS.md)
+- Anthropic open-sourced [Sandbox Runtime (srt)](https://github.com/anthropic-experimental/sandbox-runtime) - available in CC via `/sandbox`
 - Github Copilot changes: Native `Plan` mode, Custom chat modes -> Custom agents, New embedding model
 </left>
 
@@ -69,74 +70,110 @@ Requirements -> jira-task.md -> Research & Plan -> plan.md -> Implementation -> 
 [copilot_new_embedding_model](sources/copilot_new_embedding_model.png)
 </right>
 
-### Slide 5. Title: "Spec Driven Development - Your Intent is the New Source Code"
+### Slide 4. Title: "Spec Driven Development - Your Intent is the New Source Code"
 
-<left>
-- "When we prompt LLMs, we keep the generated code and we delete the prompt. This feels like you shred the source and then you very carefully version control the binary." - Sean Grove, OpenAl
-- We must stop throwing away our prompts and plans. The specification is the most valuable artifact. It is the executable description of our intent.
-</left>
+> "When we prompt LLMs, we keep the generated code and we delete the prompt. This feels like you shred the source and then you very carefully version control the binary." - Sean Grove, OpenAI
 
-<right>
+We must stop throwing away our prompts and plans. The specification is the most valuable artifact. It is the executable description of our intent.
+
+**GitHub Spec Kit**
+
+Spec-Driven Development flips the script on traditional software development. For decades, code has been king — specifications were just scaffolding we built and discarded once the "real work" of coding began. Spec-Driven Development changes this: specifications become executable, directly generating working implementations rather than just guiding them.
+
 <infographic>
-/specify (Define intent) -> /plan (Plan implementation) -> /implement (Execute plan)
+/constitution (Project principles) -> /specify (Define requirements) -> /plan (Technical design) -> /tasks (Generate task list) -> /implement (Execute tasks)
 </infographic>
-</right>
 
-### Slide 6. Title: "Context is everything"
+### Slide 5. Title: "Context is everything"
 
-<top>
-LLMs are stateless (pure functions). _The only thing other than training your model or playing with temperature that improves the quality of LLM output is quality of input._ ~Dexter Horthy
-</top>
+> "The only thing other than training your model or playing with temperature that improves the quality of LLM output is quality of input." — Dexter Horthy
 
-<bottom>
+- **Less is more**: The less context (tokens) you use to do the work, the better results you will get
+- **Bad info is catastrophic**: A bad line of research (fundamental misunderstanding of the system) can cause thousands of bad lines of code
+
 <infographic>Tokens in -> LLM -> Tokens out</infographic>
-</bottom>
 
 src: [Advanced Context Engineering for Agents](https://www.youtube.com/watch?v=IS_y40zY-hc)
 
-### Slide 7. Title: "Understanding the Context Window"
+### Slide 6. Title: "Understanding the Context Window"
 
 [Context visualisation](sources/context_visualisation.png)
 
-### Slide 8. Title: "Understanding the Context Window"
+### Slide 7. Title: "Understanding the Context Window"
 
 [Intentional compaction](sources/intentional_compaction.png)
 
 src: [Advanced Context Engineering for Agents](https://www.youtube.com/watch?v=IS_y40zY-hc)
 
-### Slide 9. Title: "The pitfalls of long context"
+### Slide 8. Title: "The pitfalls of long context"
 
 Longer context windows do not automatically generate better responses. They introduce new, surprising failure modes.
 
-<infographic>
-Poisoning
-Confusion
-Distraction
-Clash
-</infographic>
+<grid_2x2>
+**Poisoning** - Hallucination enters context and is repeatedly referenced, leading to nonsensical strategies (e.g. Gemini Pokémon agent).
+**Distraction** - Model over-focuses on long history, neglecting training knowledge. Issues start ~100K tokens (frontier) or ~32K (smaller models).
+**Clash** - Conflicting info in multi-turn reasoning. Model relies on early incorrect assumptions — 39% accuracy drop on sharded prompts.
+**Confusion** - Irrelevant tools/docs cause wrong tool selection. Model failed with 46 tools but succeeded with 19.
+</grid_2x2>
 
-### Slide 10. Title: "Advices"
+Reference: Anthropic's tool search approach - Direct tool calls vs Tool search + programmatic calling
 
-1. Research & plan -> plan.md -> Clean context -> Execute plan (implementation) -> Clean context -> Read plan & execute review
-2. Be precise: do not overload context with not relevant files and instructions
-3. Experiment with the models, you can use different models for Planning, Implementation, Review
-4. Do not use MCPs if you don't have to
-5. Keep AGENTS.md (project instructions) simple
-6. Use personal instructions to personalize agent behaviour. Example: `Always use "lwojtaszek" as author in liquibase scripts`
-7. Explain repeatable tasks as custom prompts/instructions
+src: [How Long Contexts Fail](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html)
 
-### Slide 11. Title: "Demo"
+### Slide 9. Title: "Best Practices"
+
+**Keep Context Clean**
+- Clear context between phases (Requirements → Plan → Implementation)
+- Be precise with files & instructions
+- Avoid unnecessary MCPs
+
+**Optimize Your Setup**
+- Keep AGENTS.md simple
+- Use personal instructions (e.g. `Always use "lwojtaszek" as author in liquibase migrations`)
+- Define custom prompts for repeatable tasks
+
+**Experiment**
+- Different models for different phases (Plan vs Implement vs Review)
+
+### Slide 10. Title: "Demo"
 
 <centered>
 Demo
 </centered>
 
-### Slide 12. Title: "Bonus"
+### Slide 11. Title: "Bonus"
 
-Screenshot
+Mobile Coding - Claude Code on mobile
 
-### Slide 13
+[Add screenshot here]
+
+### Slide 12. Title: "Sources"
+
+**Context Engineering & Agent Design**
+- [Advanced Context Engineering for Agents](https://www.youtube.com/watch?v=IS_y40zY-hc)
+- [How Long Contexts Fail](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html)
+- [12-Factor Agents — Dex Horthy](https://www.youtube.com/watch?v=8kMaTybvDUw&t=36s)
+
+**Anthropic / Claude**
+- [Building effective agents](https://youtu.be/2MJDdzSXL74?si=-G2osMNX-AeFbaqc)
+- [Code execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp)
+- [Advanced tool use](https://www.anthropic.com/engineering/advanced-tool-use)
+- [Sandbox Runtime (srt)](https://github.com/anthropic-experimental/sandbox-runtime)
+
+**Standards & Specifications**
+- [AGENTS.md](https://agents.md/)
+- [GitHub Spec Kit](https://github.com/github/spec-kit)
+- [Spec Driven Development — Sean Grove, OpenAI](https://youtu.be/8rABwKRsec4?si=py8nVArZYMz6YoNA)
+
+**GitHub Copilot**
+- [New embedding model](https://github.blog/news-insights/product-news/copilot-new-embedding-model-vs-code/)
+- [Context engineering guide](https://code.visualstudio.com/docs/copilot/guides/context-engineering-guide)
+- [AGENTS.md support](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions/)
+- [Custom instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions)
+
+### Slide 13. Title: "Thank you"
 
 <centered>
 Thank you
+Questions?
 </centered>
