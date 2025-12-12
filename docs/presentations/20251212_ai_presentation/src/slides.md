@@ -328,13 +328,8 @@ layout: center
 ---
 
 <div class="text-center">
-  <h2 class="text-4xl font-bold mb-8 gradient-text">Bonus</h2>
-  <div class="bonus-card">
-    <div class="text-5xl mb-4">📱</div>
-    <div class="text-xl font-semibold text-gray-700">Mobile Coding</div>
-    <div class="text-sm mt-2 text-gray-500">Claude Code on mobile</div>
-    <div class="text-xs mt-6 text-gray-400">[Add screenshot here]</div>
-  </div>
+  <h2 class="text-4xl font-bold mb-4 gradient-text">Bonus: Mobile Coding</h2>
+  <img src="/img/claude_mobile.png" class="mx-auto max-h-96 rounded-lg shadow-lg" />
 </div>
 
 ---
@@ -349,6 +344,8 @@ layout: center
 - [Advanced Context Engineering for Agents](https://www.youtube.com/watch?v=IS_y40zY-hc)
 - [How Long Contexts Fail](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html)
 - [12-Factor Agents — Dex Horthy](https://www.youtube.com/watch?v=8kMaTybvDUw&t=36s)
+- [Writing a Good CLAUDE.md](https://www.hlyr.dev/blog/writing-a-good-claude-md)
+- [Context-Efficient Backpressure](https://www.hlyr.dev/blog/context-efficient-backpressure)
 
 </div>
 <div>
