@@ -10,6 +10,9 @@
 - [Advanced Context Engineering for Agents](https://www.youtube.com/watch?v=IS_y40zY-hc)
 - [How Long Contexts Fail](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html)
 - [12-Factor Agents — Dex Horthy](https://www.youtube.com/watch?v=8kMaTybvDUw&t=36s)
+- [Writing a Good CLAUDE.md](https://www.hlyr.dev/blog/writing-a-good-claude-md)
+- [Context-Efficient Backpressure](https://www.hlyr.dev/blog/context-efficient-backpressure)
+- [Karpathy on Context Engineering](https://x.com/karpathy/status/1997731268969304070?s=20)
 
 ## Anthropic / Claude
 - [Building effective agents](https://youtu.be/2MJDdzSXL74?si=-G2osMNX-AeFbaqc)
@@ -54,3 +57,5 @@
 ## Other Resources
 - [Cline - good repository to see how AI plugins are built](https://github.com/cline/cline)
 - [Leaked system prompts](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
+- [OpenCode - AI coding agent](https://github.com/sst/opencode)
+- [lctx - Local context aggregator for AI coding agents](https://github.com/luwojtaszek/lctx)
